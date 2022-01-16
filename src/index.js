@@ -1,3 +1,3 @@
-const elm = document.body.createElement('p')
+const elm = document.createElement('p')
 document.body.appendChild(elm)
 elm.textContent = 'hello world'
