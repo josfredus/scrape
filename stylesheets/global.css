@@ -1,1 +1,18 @@
+/* color palette for testing */
+:root {
+  --background: white;
+  --text: black;
+  --main-strong: purple;
+  --main-weak: pink;
+  --side-strong: navy;
+  --side-weak: teal;
+}
 
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}

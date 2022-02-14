@@ -1,0 +1,18 @@
+#progress-bar-container {
+  z-index: 1;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  bottom: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#progress-bar {
+  pointer-events: none;
+  --width-ratio: .60;
+  --height-ratio: .006;
+  --complete-bar-color: var(--main-strong);
+  --pending-bar-color: var(--main-weak);
+}
