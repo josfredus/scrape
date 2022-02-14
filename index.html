@@ -10,116 +10,123 @@
 <link rel="stylesheet" href="stylesheets/exhibition.css">
 <script type="module" src="main.mjs"></script>
 <div id="config-screen">
-<textarea id="config-input" rows="1">
-</textarea>
-<div id="error-panel">
-</div>
-<div id="help-panel" hidden>
-<div id="config-help-panel">
-<div class="config-help-intro">
-Type subreddit names in the order you want to see them appear, and press Enter.
-</div>
-<div class="config-help-intro">
-Follow subreddits with a sorting config if you want to specify one, just like so: aww (top, week)
-</div>
-<div class="config-help-intro">
-Enter a " / " slash between spaces to start a new list of subreddits, that will play out in parallel with the other lists.
-</div>
-<div class="config-help-intro">
-You can also add the following arguments to your command:
-</div>
-<div class="config-help-command">
---shuffle, -s
-</div>
-<div class="config-help-description">
-Shuffle the order of the subreddits you typed in.
-</div>
-<div class="config-help-command">
---no-shuffle, -ns
-</div>
-<div class="config-help-description">
-(By default) Preserve the order of the subreddits you typed in.
-</div>
-<div class="config-help-command">
---skip, -sk, --skip N, -sk N
-</div>
-<div class="config-help-description">
-Auto-skip to the next content every N seconds (default: 10s).
-</div>
-<div class="config-help-command">
---no-skip, -nsk
-</div>
-<div class="config-help-description">
-(By default) Don't automatically skip to the next content.
-</div>
-<div class="config-help-command">
---reverse, -r, --reverse N, -r N
-</div>
-<div class="config-help-description">
-Start at round N (default: 5th round), auto-skip will go towards 1st round if enabled.
-</div>
-<div class="config-help-command">
---no-reverse, -nr
-</div>
-<div class="config-help-description">
-(By default) Don't do what's described just above.
-</div>
-<div class="config-help-command">
---hot, -h, --new, -n, --rising, -rs
-</div>
-<div class="config-help-command">
---top P, -t P, --controversial P, --contro P, -c P
-</div>
-<div class="config-help-description">
-Use a sorting config by default for all subreddits you haven't given a sorting config to. P can be any of the following periods: hour, day, week, month, year, all.
-</div>
-</div>
-<div id="exhibition-help-panel">
-<div class="exhibition-help-intro">
-Once you've entered your command, use the following controls during the exhibition:
-</div>
-<div class="exhibition-help-command">
-Escape, Backspace
-</div>
-<div class="exhibition-help-description">
-Go back to the command screen.
-</div>
-<div class="exhibition-help-command">
-Arrow keys: Down, Right (downstream) / Up, Left (upstream)
-</div>
-<div class="exhibition-help-description">
-Skip to another content in the desired direction.
-</div>
-<div class="exhibition-help-command">
-Space
-</div>
-<div class="exhibition-help-description">
-Toggle auto-skip.
-</div>
-<div class="exhibition-help-command">
-Enter
-</div>
-<div class="exhibition-help-description">
-Show titles of content / Hide every description / Bring back captions.
-</div>
-<div class="exhibition-help-command">
-Shift
-</div>
-<div class="exhibition-help-description">
-Enter navigation mode between viewports: use left and right arrows to cycle between viewports, use down and up arrows to skip content for the currently selected viewport only.
-</div>
-<div class="exhibition-help-command">
-Control
-</div>
-<div class="exhibition-help-description">
-Lock / Unlock the currently selected viewport; or Unlock everything if not in navigation mode.
-</div>
-</div>
-</div>
+  <div id="config-screen-main-column">
+    <textarea id="config-input" rows="1"></textarea>
+    <div id="error-panel" class="hidden"></div>
+    <div id="help-panel" class="hidden">
+      <div id="config-help-panel">
+        <div class="config-help-intro">
+        Type subreddit names in the order you want to see them appear, and press Enter.
+        </div>
+        <div class="config-help-intro">
+        Follow subreddits with a sorting config if you want to specify one, just like so: aww (top, week).
+        </div>
+        <div class="config-help-intro">
+        Enter a " / " slash between spaces to start a new list of subreddits, that will play out in parallel with the other lists.
+        </div>
+        <div class="config-help-intro">
+        You can also add the following arguments to your command:
+        </div>
+        <div class="config-help-command">
+        --shuffle, -s
+        </div>
+        <div class="config-help-description">
+        Shuffle the order of the subreddits you typed in.
+        </div>
+        <div class="config-help-command">
+        --no-shuffle, -ns
+        </div>
+        <div class="config-help-description">
+        (By default) Preserve the order of the subreddits you typed in.
+        </div>
+        <div class="config-help-command">
+        --skip, -sk, --skip N, -sk N
+        </div>
+        <div class="config-help-description">
+        Auto-skip to the next content every N seconds (default: 10s).
+        </div>
+        <div class="config-help-command">
+        --no-skip, -nsk
+        </div>
+        <div class="config-help-description">
+        (By default) Don't automatically skip to the next content.
+        </div>
+        <div class="config-help-command">
+        --reverse, -r, --reverse N, -r N
+        </div>
+        <div class="config-help-description">
+        Start at round N (default: 5th round), auto-skip will go towards 1st round if enabled.
+        </div>
+        <div class="config-help-command">
+        --no-reverse, -nr
+        </div>
+        <div class="config-help-description">
+        (By default) Don't do what's described just above.
+        </div>
+        <div class="config-help-command">
+        --hot, -h, --top P, -t P
+        </div>
+        <div class="config-help-command">
+        --new, -n, --rising, -rs
+        </div>
+        <div class="config-help-command">
+        --controversial P, --contro P, -c P
+        </div>
+        <div class="config-help-description">
+        Use a sorting config by default for all subreddits you haven't given a sorting config to. P can be any of the following periods: hour, day, week, month, year, all.
+        </div>
+      </div>
+      <div id="exhibition-help-panel">
+        <div class="exhibition-help-intro">
+        Once you've entered your command, use the following controls during the exhibition:
+        </div>
+        <div class="exhibition-help-command">
+        Escape, Backspace
+        </div>
+        <div class="exhibition-help-description">
+        Go back to the command screen.
+        </div>
+        <div class="exhibition-help-command">
+        Arrow keys:
+        </div>
+        <div class="exhibition-help-command">
+        Down, Right (downstream)
+        </div>
+        <div class="exhibition-help-command">
+        Up, Left (upstream)
+        </div>
+        <div class="exhibition-help-description">
+        Skip to another content in the desired direction.
+        </div>
+        <div class="exhibition-help-command">
+        Space
+        </div>
+        <div class="exhibition-help-description">
+        Toggle auto-skip.
+        </div>
+        <div class="exhibition-help-command">
+        Enter
+        </div>
+        <div class="exhibition-help-description">
+        Show titles of content / Hide every description / Bring back captions.
+        </div>
+        <div class="exhibition-help-command">
+        Shift
+        </div>
+        <div class="exhibition-help-description">
+        Enter navigation mode between viewports: use left and right arrows to cycle between viewports, use down and up arrows to skip content for the currently selected viewport only.
+        </div>
+        <div class="exhibition-help-command">
+        Control
+        </div>
+        <div class="exhibition-help-description">
+        Lock / Unlock the currently selected viewport; or Unlock everything if not in navigation mode.
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <div id="progress-bar-container">
-<canvas id="progress-bar">
-</canvas>
+  <canvas id="progress-bar"></canvas>
 </div>
-<div id="exhibition-viewport">
-</div>
+<div id="exhibition-viewport" class="hidden"></div>
