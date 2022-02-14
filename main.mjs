@@ -24,6 +24,7 @@ const progressBar = new ProgressBar()
 const validator = new SubredditValidator()
 const exhibitionViewport = document.getElementById('exhibition-viewport')
 document.body.removeChild(exhibitionViewport)
+exhibitionViewport.classList.remove('hidden')
 
 while (true) {
   const config = await configScreen.getConfig()
