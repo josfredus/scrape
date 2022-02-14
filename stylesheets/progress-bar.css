@@ -1,15 +1,20 @@
 #progress-bar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 1;
   pointer-events: none;
-  position: absolute;
-  width: 100%;
-  bottom: 4%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  overflow: hidden;
 }
 
 #progress-bar {
+  position: absolute;
+  bottom: 4%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
   pointer-events: none;
   --width-ratio: .60;
   --height-ratio: .006;

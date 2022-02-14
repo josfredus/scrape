@@ -1,24 +1,38 @@
 #config-screen {
-  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 80%;
+  min-width: 20em;
+  min-height: 100vh;
+  z-index: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#config-screen-main-column {
+  width: 40%;
+  min-width: 20em;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
 }
 
 #config-input {
   overflow-y: hidden;
-  width: 30%;
   background-color: transparent;
   border: none;
-  border-bottom: thin solid var(--text);
+  border-bottom: thin solid var(--main-strong);
   padding: 0;
+  padding-top: .5em;
   padding-bottom: .2em;
   box-shadow: none;
   caret-color: var(--main-strong);
   color: var(--text);
+  font: 2em/.8 monospace;
   outline: none;
   resize: none;
   transition: all .2s;
@@ -31,18 +45,123 @@
 
 #config-input:hover {
   border-radius: .25em;
+  border-bottom-color: var(--text);
   transition: all .2s;
-  color: var(--main-weak);
 }
 
 #config-input::placeholder {
   color: var(--main-weak);
+  font-style: italic;
 }
 
 #error-panel {
-  color: var(--text);
+  width: 80%;
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: solid thin var(--text);
+  padding-bottom: .2em;
+}
+
+#error-panel.hidden {
+  display: none;
+}
+
+#error-panel * {
+  color: var(--standout);
+  font: bold .8em/.9 sans-serif;
 }
 
 #help-panel {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  margin-top: 1em;
+}
+
+#help-panel.hidden {
+  display: none;
+}
+
+#help-panel::before {
+  content: "";
+  position: fixed;
+  height: 67vh;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 60%;
+  min-width: 22em;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  border-left: solid thin var(--text);
+  border-right: solid thin var(--text);
+}
+
+#config-help-panel {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  position: relative;
+  padding-right: .75em;
+}
+
+#exhibition-help-panel {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  padding-left: .75em;
+}
+
+#config-help-panel::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  height: 95%;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-left: solid thin var(--text);
+}
+
+.config-help-intro {
   color: var(--text);
+  font: 1em/.9 serif;
+  padding-bottom: .25em;
+}
+
+.config-help-command {
+  color: var(--main-strong);
+  font: bold 1.2em/1 monospace;
+}
+
+.config-help-description {
+  color: var(--text);
+  font: italic 1em/.9 serif;
+  width: 90%;
+  margin-left: auto;
+  padding-bottom: .25em;
+}
+
+.exhibition-help-intro {
+  color: var(--text);
+  font: 1em/.9 serif;
+  padding-bottom: .25em;
+}
+
+.exhibition-help-command {
+  color: var(--main-strong);
+  font: bold 1.2em/1 monospace;
+}
+
+.exhibition-help-description {
+  color: var(--text);
+  font: italic 1em/.9 serif;
+  width: 90%;
+  margin-left: auto;
+  padding-bottom: .25em;
 }

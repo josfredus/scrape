@@ -1,9 +1,16 @@
 #exhibition-viewport {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 0;
-  width: 100%;
-  height: 100%;
+  overflow: hidden;
   display: flex;
-  flex-wrap: nowrap;
+}
+
+#exhibition-viewport.hidden {
+  display: none;
 }
 
 .main-viewport-row {
@@ -34,6 +41,7 @@
   min-width: 0;
   min-height: 0;
   position: relative;
+  box-sizing: border-box;
 }
 
 .viewport-media-container {
@@ -52,26 +60,82 @@
 }
 
 .viewport-highlighted {
-  border: solid orange 5px;
-  border-radius: 10px;
+  border: solid medium var(--side-strong);
+  border-radius: 5px;
 }
 
 .viewport-locked {
-  background-color: rgba(0, 0, 255, .1);
+  background-color: var(--side-weak);
 }
 
 .caption-box {
   position: absolute;
-  right: 1em;
-  bottom: 1em;
+  right: 0;
+  bottom: 0;
+  max-width: 20%;
+  padding-right: 1em;
+  padding-bottom: 1em;
   display: flex;
   flex-direction: column;
   align-items: end;
 }
 
+.caption-box * {
+  text-align: end;
+  color: var(--text);
+  font: 1em/.9 sans-serif;
+  --caption-shadow: var(--main-weak);
+  text-shadow:
+    0 0 .1em var(--caption-shadow),
+    0 0 .2em var(--caption-shadow),
+    0 0 .3em var(--caption-shadow),
+    0 0 .4em var(--caption-shadow),
+    0 0 .5em var(--caption-shadow);
+}
+
 .title-box {
   position: absolute;
-  width: 60%;
-  left: 1em;
-  bottom: 1em;
+  left: 0;
+  bottom: 0;
+  max-width: 75%;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  font: bold 1.2em/1 sans-serif;
+}
+
+.viewport a:link,
+.viewport a:visited {
+  text-decoration: none;
+  color: var(--main-strong);
+  --link-shadow: var(--main-weak);
+  text-shadow:
+    0 0 .1em var(--link-shadow),
+    0 0 .2em var(--link-shadow),
+    0 0 .3em var(--link-shadow),
+    0 0 .4em var(--link-shadow),
+    0 0 .5em var(--link-shadow);
+}
+
+.viewport a:hover {
+  text-decoration: none;
+  color: var(--text);
+  --hover-link-shadow: var(--main-weak);
+  text-shadow:
+    0 0 .1em var(--hover-link-shadow),
+    0 0 .2em var(--hover-link-shadow),
+    0 0 .3em var(--hover-link-shadow),
+    0 0 .4em var(--hover-link-shadow),
+    0 0 .5em var(--hover-link-shadow);
+}
+
+.viewport a:active {
+  text-decoration: none;
+  color: var(--side-strong);
+  --active-link-shadow: var(--side-weak);
+  text-shadow:
+    0 0 .1em var(--active-link-shadow),
+    0 0 .2em var(--active-link-shadow),
+    0 0 .3em var(--active-link-shadow),
+    0 0 .4em var(--active-link-shadow),
+    0 0 .5em var(--active-link-shadow);
 }
